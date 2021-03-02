@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="https://www.pimarkets.io/favicon.ico"/>
+    <title>PiMarkets® Riesgo Default</title>
+    <script src="https://cdn.jsdelivr.net/npm/pi-markets@1.0.86/dist/pimarkets.min.js"></script>
+    <script type="text/javascript">
+        const ABI = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"_name","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_new","type":"address"}],"name":"setOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"bytes32"}],"name":"balances","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_tokenId","type":"bytes32"}],"name":"balanceById","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"tokenOfOwner","outputs":[{"name":"","type":"bytes32[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_index","type":"uint256"}],"name":"tokenOfOwnerByIndex","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"tokens","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_destination","type":"address"},{"name":"_tokenId","type":"bytes32"}],"name":"getApproved","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_owner","type":"address"},{"name":"_approved","type":"address"},{"name":"_tokenId","type":"bytes32"},{"name":"_amount","type":"uint256"}],"name":"approve","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_tokenId","type":"bytes32"}],"name":"isExpired","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_json","type":"uint256[5]"},{"name":"_amount","type":"uint256"}],"name":"mint","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_tokenId","type":"bytes32"},{"name":"_amount","type":"uint256"}],"name":"burn","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_tokenId","type":"bytes32"},{"name":"_amount","type":"uint256"}],"name":"transferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_new","type":"string"}],"name":"setJsonReference","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"_symbol","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_operator","type":"address"},{"name":"_approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_tokenId","type":"bytes32"}],"name":"getMetadata","outputs":[{"name":"","type":"uint256[5]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getTokens","outputs":[{"name":"","type":"bytes32[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"priviledged","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_tokenId","type":"bytes32"},{"name":"_amount","type":"uint256"},{"name":"_data","type":"bytes"}],"name":"safeTransferFromApproved","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_priv","type":"address"}],"name":"setPriviledged","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_tokenId","type":"bytes32"},{"name":"_amount","type":"uint256"},{"name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"supplyByCategory","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"jsonReference","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_name","type":"string"},{"name":"_symbol","type":"string"},{"name":"_owner","type":"address"},{"name":"_jsonReference","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":true,"name":"_tokenId","type":"bytes32"},{"indexed":false,"name":"_amount","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_approved","type":"address"},{"indexed":true,"name":"_tokenId","type":"bytes32"},{"indexed":false,"name":"_amount","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_operator","type":"address"},{"indexed":false,"name":"_approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"tokenId","type":"bytes32"},{"indexed":false,"name":"json","type":"uint256[5]"}],"name":"NewJson","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"old","type":"string"},{"indexed":false,"name":"current","type":"string"}],"name":"NewJsonReference","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"old","type":"address"},{"indexed":true,"name":"current","type":"address"}],"name":"NewOwner","type":"event"}];
+        const PRIVILEDGED_ADDR = "0xf7588c357f1e961df9196fca34396c45258f6094";
+        const A_ADDR = "0xf53a429ee338739168fb9b7a7b573a533c3102b9";
+        const B_ADDR = "0xcd18ffbcb4317bd276dcfb02f7d19b00861e00b6";
+        const C_ADDR = "0xf97737fd89b3a7937660e8f7444179d12e30e7cd";
+        const D_ADDR = "0xe196139dbbf72e163f9ac3e7e9f8376901eb277d";
+        const F_ADDR = "0xc1bf7e77230ead76574bb96eb7620b3c7f7777a1";
+        const A_PACK_ID = "0x16916c7cd47f261d1ffd87db0bf86b22c0fb5baebd333ce8f9c279b7e7151b1e";
+        const B_PACK_ID = "0xf42b592c6d56f6c82493470eab3da884d5995211a59d449f9456c06c3aed9c71";
+        const C_PACK_ID = "0x82b8e3ae775514cd973e469e80df58b06e805933859a774c7ff6fca710505791";
+        const D_PACK_ID = "0x685bd0053a997786d53d10a8457d0cc02c4977ebaa2c437df2e370464eeb1449";
+        const F_PACK_ID = "0xddc7f8706c8cc57063ae6e83a645aecd659ae66563bbf7e89b2e0682c2715877";
+
+        function getSigner() {
+            let mnemonicSelector = document.getElementById("mnemonicInput");
+		    let mnemonic = mnemonicSelector.value;
+            let walletService = new pimarkets.Wallets('mainnet');
+            let signer = walletService.createWalletFromMnemonic(mnemonic, pimarkets.Constants.PATH_0);
+            return signer;
+        }
+
+        async function getUserWallet() {
+            let nameSelector = document.getElementById("nicknameInput");
+		    let nickname = nameSelector.value;
+            let queryService = new pimarkets.QueryTemplates('mainnet');
+            let wallet = await queryService.getWalletByName(nickname);
+            return wallet;
+        }
+
+        function getContractAddress() {
+            let addrSelector = document.getElementById("addrSelector");
+		    let index = addrSelector.options[addrSelector.selectedIndex].value;
+            let contractAddress;
+            let tokenId;
+
+            switch(index) {
+                case "1":
+                    contractAddress = A_ADDR;
+                    tokenId = A_PACK_ID;
+                    break;
+                case "2":
+                    contractAddress = B_ADDR;
+                    tokenId = B_PACK_ID;
+                    break;
+                case "3":
+                    contractAddress = C_ADDR;
+                    tokenId = C_PACK_ID;
+                    break;
+                case "4":
+                    contractAddress = D_ADDR;
+                    tokenId = D_PACK_ID;
+                    break;
+                case "5":
+                    contractAddress = F_ADDR;
+                    tokenId = F_PACK_ID;
+                    break;
+                default:
+                    alert("Ningún tipo de reporte elegido");
+            }
+
+            return [contractAddress, tokenId];
+        }
+
+        async function transfer() {
+            document.getElementById("wait").innerHTML = "Espere...";
+            let signer = getSigner();
+            let token = getContractAddress();
+            let contractAddress = token[0];
+            let tokenId = token[1];
+            let from = await getUserWallet();
+            let contractService = new pimarkets.Contracts('mainnet');
+            let contract = contractService.getContractSigner(
+                contractAddress,
+                ABI,
+                signer
+            );
+
+            console.log(signer);
+            console.log(contractAddress);
+            console.log(tokenId);
+            console.log(from);
+            console.log(contract);
+
+            try {
+                await contract.safeTransferFrom(
+                    from,
+                    PRIVILEDGED_ADDR,
+                    tokenId,
+                    "0x"
+                );
+                document.getElementById("wait").innerHTML = "Revocación exitosa";
+            } catch (error) {
+                document.getElementById("wait").innerHTML = "ERROR";
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  <style type='text/css'>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            background-color: #072146
+        }
+        
+        h1 {
+            color: white;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        h4 {
+            color: white;
+        }
+
+        h5 {
+            color: white;
+        }
+
+        .mySelector {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            width: 150px;
+            font-size: 16px;
+            text-align-last:center;
+        }
+
+        .myCheckbox {
+            font-color: white;
+            background-color: green;
+        }
+
+        label {
+            color:white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .myButton {
+            background-color:#0a93eb;
+            border-radius:6px;
+            cursor:pointer;
+            color:white;
+            font-family:Arial;
+            font-size:15px;
+            font-weight:normal;
+            padding:6px 24px;
+        }
+
+        .center {
+            margin: auto;
+            padding: 10px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <div class="center">
+        <br>
+        <br>
+        <img src="https://pimarkets.io/assets/img/logo-positive.png" width="250" height="50">
+        <h4>- v1.0.86 -</h4>
+        <br>
+        <input id="mnemonicInput" size="150" placeholder="Insertar las 12 palabras del mnemónico (todas en minúscula y separadas por un espacio)" style="text-align:center; font-size:15px; border-radius: 6px; height:25px"></input>
+        <br>
+        <br>
+        <br>
+        <select class="mySelector" name="addrSelector" id="addrSelector";>
+            <option value="0">Token</option>
+            <option value="1">A</option>
+            <option value="2">B</option>
+            <option value="3">C</option>
+            <option value="4">D</option>
+            <option value="5">F</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <input id="nicknameInput" placeholder="Nombre de usuario" style="text-align:center; font-size:15px; border-radius: 6px; height:25px"></input>
+        <br>
+        <br>
+        <div style="color: white;" id="wait"></div>
+        <br>
+        <button class="myButton" onclick="transfer();">Revocar</button>
+    </div>
+  </body>
+</html>
