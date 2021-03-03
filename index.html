@@ -35,6 +35,13 @@
             return wallet;
         }
 
+        function getAmount() {
+            let amountSelector = document.getElementById("amountInput");
+		    let amount = amountSelector.value;
+            let amountBN = pimarkets.Utils.etherStringToWeiBN(String(parseInt(amount)));
+            return amountBN;
+        }
+
         function getContractAddress() {
             let addrSelector = document.getElementById("addrSelector");
 		    let index = addrSelector.options[addrSelector.selectedIndex].value;
@@ -76,6 +83,7 @@
             let contractAddress = token[0];
             let tokenId = token[1];
             let from = await getUserWallet();
+            let amount = getAmount();
             let contractService = new pimarkets.Contracts('mainnet');
             let contract = contractService.getContractSigner(
                 contractAddress,
@@ -87,6 +95,7 @@
             console.log(contractAddress);
             console.log(tokenId);
             console.log(from);
+            console.log(amount.toString())
             console.log(contract);
 
             try {
@@ -94,6 +103,7 @@
                     from,
                     PRIVILEDGED_ADDR,
                     tokenId,
+                    amount,
                     "0x"
                 );
                 document.getElementById("wait").innerHTML = "Revocación exitosa";
@@ -192,6 +202,9 @@
         <br>
         <br>
         <input id="nicknameInput" placeholder="Nombre de usuario" style="text-align:center; font-size:15px; border-radius: 6px; height:25px"></input>
+        <br>
+        <br>
+        <input id="amountInput" placeholder="Cantidad" style="text-align:center; font-size:15px; border-radius: 6px; height:25px"></input>
         <br>
         <br>
         <div style="color: white;" id="wait"></div>
