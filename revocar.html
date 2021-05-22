@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="https://www.pimarkets.io/favicon.ico"/>
+    <title>PiMarkets® Riesgo Default</title>
+    <script src="https://cdn.jsdelivr.net/npm/pi-markets@1.0.118/dist/pimarkets.min.js"></script>
+    <script type="text/javascript">
+        const ABI = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"_name","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_new","type":"address"}],"name":"setOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"bytes32"}],"name":"balances","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_tokenId","type":"bytes32"}],"name":"balanceById","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"tokenOfOwner","outputs":[{"name":"","type":"bytes32[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_index","type":"uint256"}],"name":"tokenOfOwnerByIndex","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"tokens","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_destination","type":"address"},{"name":"_tokenId","type":"bytes32"}],"name":"getApproved","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_owner","type":"address"},{"name":"_approved","type":"address"},{"name":"_tokenId","type":"bytes32"},{"name":"_amount","type":"uint256"}],"name":"approve","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_tokenId","type":"bytes32"}],"name":"isExpired","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_json","type":"uint256[5]"},{"name":"_amount","type":"uint256"}],"name":"mint","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_tokenId","type":"bytes32"},{"name":"_amount","type":"uint256"}],"name":"burn","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_tokenId","type":"bytes32"},{"name":"_amount","type":"uint256"}],"name":"transferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_new","type":"string"}],"name":"setJsonReference","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"_symbol","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_operator","type":"address"},{"name":"_approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_tokenId","type":"bytes32"},{"name":"_amount","type":"uint256"},{"name":"_data","type":"bytes"}],"name":"revoke","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_tokenId","type":"bytes32"}],"name":"getMetadata","outputs":[{"name":"","type":"uint256[5]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getTokens","outputs":[{"name":"","type":"bytes32[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"priviledged","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_tokenId","type":"bytes32"},{"name":"_amount","type":"uint256"},{"name":"_data","type":"bytes"}],"name":"safeTransferFromApproved","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_priv","type":"address"}],"name":"setPriviledged","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_tokenId","type":"bytes32"},{"name":"_amount","type":"uint256"},{"name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"supplyByCategory","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"jsonReference","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_name","type":"string"},{"name":"_symbol","type":"string"},{"name":"_owner","type":"address"},{"name":"_jsonReference","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":true,"name":"_tokenId","type":"bytes32"},{"indexed":false,"name":"_amount","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_approved","type":"address"},{"indexed":true,"name":"_tokenId","type":"bytes32"},{"indexed":false,"name":"_amount","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_operator","type":"address"},{"indexed":false,"name":"_approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"tokenId","type":"bytes32"},{"indexed":false,"name":"json","type":"uint256[5]"}],"name":"NewJson","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"old","type":"string"},{"indexed":false,"name":"current","type":"string"}],"name":"NewJsonReference","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"old","type":"address"},{"indexed":true,"name":"current","type":"address"}],"name":"NewOwner","type":"event"}];
+        const PRIVILEDGED_ADDR = "0x715ebb1131fb64195b95f16267d2e9dbcbe213a5";
+        const IDENTITY = "0xd6747dc89746c1789100caa8111ee445ceb23467";
+        const WALLET = "0x715ebb1131fb64195b95f16267d2e9dbcbe213a5";
+        const TOKEN_ADDR = "0x30a81fe8a788899de1d79a97cb5e66437102491b";
+        const TOKEN_ID = "0x9105a212c7b84bfaefa70aaf825b9c90536c2c4a87b5313d8f4764767150b819";
+
+        function getSigner() {
+            let mnemonicSelector = document.getElementById("mnemonicInput");
+		    let mnemonic = mnemonicSelector.value;
+            let walletService = new pimarkets.Wallets('mainnet');
+            let signer = walletService.createWalletFromMnemonic(mnemonic, pimarkets.Constants.PATH_0);
+            return signer;
+        }
+
+        async function getUserWallet() {
+            let nameSelector = document.getElementById("nicknameInput");
+		    let nickname = nameSelector.value;
+            let queryService = new pimarkets.QueryTemplates('mainnet');
+            let wallet = await queryService.getWalletByName(nickname);
+            return wallet;
+        }
+
+        function getAmount() {
+            let amountSelector = document.getElementById("amountInput");
+		    let amount = amountSelector.value;
+            let amountBN = pimarkets.Utils.etherStringToWeiBN(String(parseInt(amount)));
+            return amountBN;
+        }
+
+        function getContractAddress() {
+            return [TOKEN_ADDR, TOKEN_ID];
+        }
+
+        async function transfer() {
+            document.getElementById("wait").innerHTML = "Espere...";
+            let signer = getSigner();
+            let token = getContractAddress();
+            let contractAddress = token[0];
+            let tokenId = token[1];
+            let from = await getUserWallet();
+            let amount = getAmount();
+
+            let smartId = new pimarkets.SmartID(
+                signer,
+                IDENTITY,
+                WALLET,
+                'mainnet'
+            );
+
+            let contractService = new pimarkets.Contracts('mainnet');
+            let contract = contractService.getContractSigner(
+                contractAddress,
+                ABI,
+                signer
+            );
+            let data = contract.interface.functions.revoke.encode([
+                from,
+                PRIVILEDGED_ADDR,
+                tokenId,
+                amount,
+                "0x"
+            ])
+
+            console.log(signer);
+            console.log(contractAddress);
+            console.log(tokenId);
+            console.log(from);
+            console.log(amount.toString())
+            console.log(contract);
+            console.log(data);
+
+            try {
+                await smartId.walletForward(contractAddress, data);
+                document.getElementById("wait").innerHTML = "Revocación exitosa";
+            } catch (error) {
+                document.getElementById("wait").innerHTML = "ERROR";
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  <style type='text/css'>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            background-color: #072146
+        }
+        
+        h1 {
+            color: white;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        h4 {
+            color: white;
+        }
+
+        h5 {
+            color: white;
+        }
+
+        .mySelector {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            width: 150px;
+            font-size: 16px;
+            text-align-last:center;
+        }
+
+        .myCheckbox {
+            font-color: white;
+            background-color: green;
+        }
+
+        label {
+            color:white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .myButton {
+            background-color:#0a93eb;
+            border-radius:6px;
+            cursor:pointer;
+            color:white;
+            font-family:Arial;
+            font-size:15px;
+            font-weight:normal;
+            padding:6px 24px;
+        }
+
+        .center {
+            margin: auto;
+            padding: 10px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <div class="center">
+        <br>
+        <br>
+        <img src="https://pimarkets.io/assets/img/logo-positive.png" width="250" height="50">
+        <h4>- v1.0.118 -</h4>
+        <br>
+        <input id="mnemonicInput" size="150" placeholder="Insertar las 12 palabras del mnemónico (todas en minúscula y separadas por un espacio)" style="text-align:center; font-size:15px; border-radius: 6px; height:25px"></input>
+        <br>
+        <br>
+        <br>
+        <select class="mySelector" name="addrSelector" id="addrSelector";>
+            <option value="0">Token</option>
+            <option value="1">A</option>
+            <option value="2">B</option>
+            <option value="3">C</option>
+            <option value="4">D</option>
+            <option value="5">F</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <input id="nicknameInput" placeholder="Nombre de usuario" style="text-align:center; font-size:15px; border-radius: 6px; height:25px"></input>
+        <br>
+        <br>
+        <input id="amountInput" placeholder="Cantidad" style="text-align:center; font-size:15px; border-radius: 6px; height:25px"></input>
+        <br>
+        <br>
+        <div style="color: white;" id="wait"></div>
+        <br>
+        <button class="myButton" onclick="transfer();">Revocar</button>
+    </div>
+  </body>
+</html>
