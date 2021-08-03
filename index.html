@@ -15,11 +15,13 @@
         const C_ADDR = "0xf97737fd89b3a7937660e8f7444179d12e30e7cd";
         const D_ADDR = "0x71fd493c23acdb5dd09aa90489fbe45248e58de4";
         const F_ADDR = "0x7890239408e63c886db3c3c929be41a1ea13953a";
+        const REPO_ADDR = "0xd1211eac37dd0d2e65d26163f7dcdc10a16c32da";
         const A_PACK_ID = "0x16916c7cd47f261d1ffd87db0bf86b22c0fb5baebd333ce8f9c279b7e7151b1e";
         const B_PACK_ID = "0xf42b592c6d56f6c82493470eab3da884d5995211a59d449f9456c06c3aed9c71";
         const C_PACK_ID = "0x82b8e3ae775514cd973e469e80df58b06e805933859a774c7ff6fca710505791";
         const D_PACK_ID = "0x685bd0053a997786d53d10a8457d0cc02c4977ebaa2c437df2e370464eeb1449";
         const F_PACK_ID = "0xddc7f8706c8cc57063ae6e83a645aecd659ae66563bbf7e89b2e0682c2715877";
+        const REPO_PACK_ID = "0x0f9ff5fd315e50270db1b8461a7d485c70cf80cad69d8c5b31b28c91a48737f2";
 
         function getSigner() {
             let mnemonicSelector = document.getElementById("mnemonicInput");
@@ -70,6 +72,10 @@
                 case "5":
                     contractAddress = F_ADDR;
                     tokenId = F_PACK_ID;
+                    break;
+                case "6":
+                    contractAddress = REPO_ADDR;
+                    tokenId = REPO_PACK_ID;
                     break;
                 default:
                     alert("Ningún tipo de reporte elegido");
@@ -209,6 +215,7 @@
             <option value="3">C</option>
             <option value="4">D</option>
             <option value="5">F</option>
+            <option value="6">REPO</option>
         </select>
         <br>
         <br>
